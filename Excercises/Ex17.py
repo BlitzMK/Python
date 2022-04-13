@@ -5,6 +5,8 @@
 # beautiful soup 4: https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
 
 import requests
-import bs4 as soup
+import bs4
 
-r = requests.get("https://www.nytimes.com/")
+html = requests.get("https://www.nytimes.com/")
+# parsed = bs4(html,'html.parser')
+print(html)
