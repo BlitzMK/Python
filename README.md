@@ -6,5 +6,6 @@ All programs and projects that I have written in python exclusively.
 
 ### Exercise sources:
 - https://www.practicepython.org/
+- https://www.hackerrank.com/dashboard
 
 all code written in this file was done by Samuel Chandler
