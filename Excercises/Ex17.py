@@ -5,8 +5,11 @@
 # beautiful soup 4: https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
 
 import requests
-import bs4
+from bs4 import BeautifulSoup
 
 html = requests.get("https://www.nytimes.com/")
-# parsed = bs4(html,'html.parser')
-print(html)
+html = html.text
+soup = BeautifulSoup(html,'html.parser')
+titles = soup.find_all('h3')
+for t in titles:
+    print(t.text)
