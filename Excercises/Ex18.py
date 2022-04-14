@@ -8,11 +8,54 @@
 
 # https://www.practicepython.org/exercise/2014/07/05/18-cows-and-bulls.html
 
-def getUserInput():
-    
+import random as rd
 
+def getUserInput():
+    guess = input("enter a 4 digit number (ex 1234): " ).strip(" ")
+
+    while(len(guess) != 4):
+        print("invalid input must be only 4 digits")
+        guess = input("enter a 4 digit number (ex 1234): " )
+        
+
+    return list(guess)
+
+
+# declaring viables
+cow = 0
+bull = 0
+guess = ""
+guessAmount = 0
+win = False
+i = 0
+answer = rd.sample(range(0,10),4)
+print(answer)
 
 
 
 print("Welcome to Cows and Bull Game")
+
+while(win == False):
+    guess = getUserInput()
+    guessAmount += 1
+    # print("".join(guess))
+
+    for x in guess:
+        if int(x) == int(answer[i]):
+            cow += 1
+            bull -= 1
+        for y in answer:
+            if int(x) == int(y):
+                bull += 1
+        i += 1
+    print("Bulls: "+ str(bull) + "   Cows: "+ str(cow))
+
+    i = 0
+
+    if(cow == 4):
+        win = True
+        print("Congrats you win\nGuesses: " + str(guessAmount))
+
+    cow = 0
+    bull = 0
 
