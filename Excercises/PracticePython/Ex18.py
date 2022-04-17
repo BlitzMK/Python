@@ -29,7 +29,7 @@ guessAmount = 0
 win = False
 i = 0
 answer = rd.sample(range(0,10),4)
-print(answer)
+# print(answer)
 
 
 
