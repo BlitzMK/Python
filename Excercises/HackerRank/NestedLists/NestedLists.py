@@ -1,22 +1,23 @@
-from sys import last_traceback
-
 
 if __name__ == '__main__':
 
-    Last = [[101,float(101)]]
-    second = []
-    
+    second = 0 
+    second_names = []
     Students = []
-    currentStudent = 0
+    scores = set()
     for _ in range(int(input())):
         name = input()
         score = float(input())
-        currentStudent = [name,score]
-        Students.append(currentStudent)
-        if currentStudent[1] < Last[0][1]:
-            second = Last
-            Last = currentStudent
-        if currentStudent[1] == Last[0][1]:
-            Last.append[currentStudent]
+        Students.append([name,score])
+        scores.add(score)
         
-        print(second)
+    second = sorted(scores)[1]
+
+    for name,score in Students:
+        if score == second: 
+            second_names.append(name)
+    
+    for name in sorted(second_names):
+        print(name, end = '\n')
+        
+        
